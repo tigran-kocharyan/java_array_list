@@ -6,6 +6,9 @@ import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Тестирование класса ArrayList.
+ */
 class ArrayListTest {
     @Test
     public void Check_Put() {
@@ -35,5 +38,19 @@ class ArrayListTest {
         array.put(1);
 
         assertEquals(Optional.empty(), array.getAt(2));
+    }
+
+    @Test
+    public void Check_Clear() {
+        ArrayList<Integer> array = new ArrayList<Integer>();
+        array.put(1);
+        array.put(2);
+        array.put(3);
+        array.put(4);
+        array.put(5);
+        array.clear();
+
+        assertEquals(0, array.getSize());
+        assertEquals(Optional.empty(), array.getAt(4));
     }
 }
